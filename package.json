@@ -1,7 +1,7 @@
 {
   "name": "lc-react-essentials",
-  "version": "1.0.0",
-  "description": "A simple yet awesome React Parallax component",
+  "version": "1.0.2",
+  "description": "A simple yet awesome React Parallax component and some other essentials",
   "main": "dist/index.js",
   "module":"dist/index.es.js",
   "scripts": {
@@ -41,5 +41,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luciocabrera/lc-react-essentials.git"
   }
 }
