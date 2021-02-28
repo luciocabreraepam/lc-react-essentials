@@ -1,5 +1,3 @@
-# lc-react-essentials
-
 # LC React Essentials
 
 It is a small set of reusable **components** created  to implement web UIs consistently.

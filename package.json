@@ -10,6 +10,7 @@
     "build-storybook": "build-storybook",
     "build-lib": "rollup -c"
   },
+  "files":["dist/index.js","dist/index.es.js"],
   "keywords": [
     "react",
     "ui",
