@@ -39,16 +39,20 @@ import React from "react";
 import { ContentBlock, Button } from "lc-react-essentials";
 
 const App = () => (
-    <ContentBlock>
-      title: `I am Brajeam George`,
-      subtitle: `And I'm a Photographer`,
-      children: (
-        <>
-          <Button label='Hire me' />
-          <Button label='Galery' />
-        </>
-      )
-    </ContentBlock>
+  <ContentBlock
+    title={`I am Brajeam George`}
+    subtitle={`And I'm a Photographer`}
+    fontColor='black'
+    children={
+      <>
+        <Button label='Hire me' />
+        <Button label='Galery' />
+      </>
+    }
+  />
+);
+
+export default App;
 )
 ```
 <br/>
