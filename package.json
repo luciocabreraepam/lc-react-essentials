@@ -3,14 +3,17 @@
   "version": "1.0.2",
   "description": "A simple yet awesome React Parallax component and some other essentials",
   "main": "dist/index.js",
-  "module":"dist/index.es.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-lib": "rollup -c"
   },
-  "files":["dist/index.js","dist/index.es.js"],
+  "files": [
+    "dist/index.js",
+    "dist/index.es.js"
+  ],
   "keywords": [
     "react",
     "ui",

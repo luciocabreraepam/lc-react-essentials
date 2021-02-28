@@ -30,5 +30,5 @@ export default {
     resolve(),
     terser()
   ],
- // external: ['react', 'react-dom', 'prop-types', 'styled-components']
+  external: ['prop-types']
 };
