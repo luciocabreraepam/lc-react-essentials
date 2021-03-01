@@ -14,6 +14,7 @@ const Parallax = props => (
         bgRepeatBlock={block.bgRepeatBlock}
         footer={block.footer}
         children={block.children}
+        showAnimation={block.showAnimation}
       />
     ))}
   </ParallaxStyled>
