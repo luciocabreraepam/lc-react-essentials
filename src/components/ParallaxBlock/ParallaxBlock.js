@@ -9,6 +9,8 @@ const ParallaxBlock = props => (
       heightBlock={props.heightBlock}
       bgImgBlock={props.bgImgBlock}
       bgRepeatBlock={props.bgRepeatBlock}
+      showAnimation={props.showAnimation}
+      showAnimationInBack={props.showAnimationInBack}
     >
       {props.children}
     </ParallaxBlockBody>
@@ -55,13 +57,25 @@ ParallaxBlock.propTypes = {
    * It is anything that can be rendered in React
    * and is shown bellow the Block body (outside).
    */
-  footer: PropTypes.node
+  footer: PropTypes.node,
+  /** Block's show animation.
+   * Indicates wheter to show or not an animation in the block.
+   */
+  showAnimation: PropTypes.bool,
+  /** Block's show animation in the back.
+   * When show animation  is true, it
+   * indicates wheter to show or not an animation in the back of
+   *  the block.
+   */
+  showAnimationInBack: PropTypes.bool
 };
 
 ParallaxBlock.defaultProps = {
   opacityBlock: 1,
   heightBlock: `100vh`,
-  bgRepeatBlock: `no-repeat`
+  bgRepeatBlock: `no-repeat`,
+  showAnimation: false,
+  showAnimationInBack: false
 };
 
 export default ParallaxBlock;
