@@ -31,7 +31,7 @@ withChildren.args = {
 };
 
 export const withHoverEffects = Template.bind({});
-withChildren.args = {
+withHoverEffects.args = {
   title: `I am Brajeam George`,
   subtitle: `And I'm a Photographer`,
   fontColor: colors.gray.medium,
