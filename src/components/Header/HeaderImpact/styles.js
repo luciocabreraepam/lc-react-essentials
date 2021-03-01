@@ -1,16 +1,37 @@
 import styled from 'styled-components';
 
 export const HeaderImpactStyled = styled.h1`
-  //font-size: 8vw; /* Responsive font size */
   letter-spacing: 0.5px;
   font-weight: bold;
-  mix-blend-mode: ${props =>
-    props.blendMode}; /* This makes the cutout text possible */
+  mix-blend-mode: ${({ blendMode }) =>
+    blendMode}; /* This makes the cutout text possible */
   text-align: center; /* Center text */
-  color: ${props => props.fontColor};
-  background-color: ${props => props.backgroundColor};
+  color: ${({ fontColor }) => fontColor};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   padding: 2vw;
-  margin: 0px;
+  margin-right: 8vw;
+  margin-left: 8vw;
+
+  :hover {
+    ${({ scaleOnHover }) =>
+      scaleOnHover &&
+      `
+      transform: scale(1.2);
+      transition: all 0.4s ease-in-out;
+    `}
+    ${({ applyGlassOnHover }) =>
+      applyGlassOnHover &&
+      `
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(1px) saturate(50%) contrast(75%) brightness(45%);
+
+    `}
+    ${({ roundOnHover }) =>
+      roundOnHover &&
+      `
+      border-radius: 18px;
+    `}
+  }
 
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {

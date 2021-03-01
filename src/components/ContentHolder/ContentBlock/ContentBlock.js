@@ -11,6 +11,9 @@ const ContentBlock = props => (
         backgroundColor='unset'
         title={props.title}
         fontColor={props.fontColor}
+        scaleOnHover={props.scaleHeaderOnHover}
+        applyGlassOnHover={props.applyGlassHeaderOnHover}
+        roundOnHover={props.roundHeaderOnHover}
       />
     )}
     {props.subtitle && <p>{props.subtitle}</p>}
@@ -32,11 +35,30 @@ ContentBlock.propTypes = {
    * It is anything that can be rendered as children in React
    * and is shown inside the Content Block.
    */
-  children: PropTypes.node
+  children: PropTypes.node,
+  /** Content block's header's scale on hover.
+   * Indicates wheter to scale or not the header on hover.
+   * It uses the CSS transform and transition properties
+   */
+  scaleHeaderOnHover: PropTypes.bool,
+  /** Content block's header's apply glass effect on hover.
+   * Indicates wheter to apply or not a glass effect to the header on hover.
+   * It uses the CSS background-color and backdrop-filter properties.
+   */
+  applyGlassHeaderOnHover: PropTypes.bool,
+  /** Content block's header's round borders on hover.
+   * Indicates wheter to round or not the header on hover.
+   * It uses the CSS border-radiusproperty that sets
+   * the radius of the header's corners when hovering over it .
+   */
+  roundHeaderOnHover: PropTypes.bool
 };
 
 ContentBlock.defaultProps = {
-  fontColor: colors.light
+  fontColor: colors.light,
+  scaleHeaderOnHover: false,
+  applyGlassHeaderOnHover: false,
+  roundHeaderOnHover: false
 };
 
 export default ContentBlock;

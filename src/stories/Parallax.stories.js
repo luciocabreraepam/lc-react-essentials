@@ -19,6 +19,7 @@ const parallaxBlocks = [
       <ContentBlock
         title='Yo soy Brajeam George'
         subtitle={`And I'm a Photographer`}
+        scaleHeaderOnHover
       >
         <>
           <Button label='Hire me' />

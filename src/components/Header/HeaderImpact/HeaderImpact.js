@@ -8,6 +8,9 @@ const HeaderImpact = props => (
     fontColor={props.fontColor}
     backgroundColor={props.backgroundColor}
     blendMode={props.blendMode}
+    scaleOnHover={props.scaleOnHover}
+    applyGlassOnHover={props.applyGlassOnHover}
+    roundOnHover={props.roundOnHover}
   >
     {props.title}
   </HeaderImpactStyled>
@@ -45,12 +48,31 @@ HeaderImpact.propTypes = {
     'saturation',
     'color',
     'luminosity'
-  ])
+  ]),
+  /** Header's scale on hover.
+   * Indicates wheter to scale or not the header on hover.
+   * It uses the CSS transform and transition properties
+   */
+  scaleOnHover: PropTypes.bool,
+  /** Header's apply glass effect on hover.
+   * Indicates wheter to apply or not a glass effect to the header on hover.
+   * It uses the CSS background-color and backdrop-filter properties.
+   */
+  applyGlassOnHover: PropTypes.bool,
+  /** Header's round borders on hover.
+   * Indicates wheter to round or not the header on hover.
+   * It uses the CSS border-radiusproperty that sets
+   * the radius of the header's corners when hovering over it .
+   */
+  roundOnHover: PropTypes.bool
 };
 
 HeaderImpact.defaultProps = {
   fontColor: colors.light,
   backgroundColor: colors.gray.dark,
-  blendMode: 'normal'
+  blendMode: 'normal',
+  scaleOnHover: false,
+  applyGlassOnHover: false,
+  roundOnHover: false
 };
 export default HeaderImpact;

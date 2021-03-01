@@ -57,6 +57,32 @@ ScreenBlendLight.args = {
   blendMode: 'screen'
 };
 
+export const ScreenBlendLightWithEffects = Template.bind({});
+ScreenBlendLightWithEffects.args = {
+  title: 'BRAJEAM  GEORGE',
+  fontColor: colors.gray.light,
+  backgroundColor: colors.light,
+  scaleOnHover:true,
+  applyGlassOnHover:true,
+  roundOnHover:true
+};
+
+export const ScreenBlendLightScaleOnHover = Template.bind({});
+ScreenBlendLightScaleOnHover.args = {
+  title: 'BRAJEAM  GEORGE',
+  fontColor: colors.gray.light,
+  backgroundColor: colors.light,
+  scaleOnHover:true
+};
+
+export const ScreenBlendLightApplyGlassOnHover = Template.bind({});
+ScreenBlendLightApplyGlassOnHover.args = {
+  title: 'BRAJEAM  GEORGE',
+  fontColor: colors.gray.light,
+  backgroundColor: colors.light,
+  applyGlassOnHover:true
+};
+
 export const ScreenBlendDark = Template.bind({});
 ScreenBlendDark.args = {
   title: 'BRAJEAM  GEORGE',

@@ -1,6 +1,6 @@
 {
   "name": "lc-react-essentials",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A simple yet awesome React Parallax component and some other essentials",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -19,7 +19,10 @@
     "react",
     "ui",
     "parallax",
-    "basic components"
+    "basic components",
+    "header",
+    "button",
+    "content"
   ],
   "author": "Lucio Cabrera",
   "license": "MIT",
