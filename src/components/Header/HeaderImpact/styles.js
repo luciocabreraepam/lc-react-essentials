@@ -41,8 +41,4 @@ export const HeaderImpactStyled = styled.h1`
   @media only screen and (min-width: 601px) {
     font-size: 6vw;
   }
-
-  @media only screen (min-width: 769px) {
-    font-size: 5vw;
-  }
 `;
