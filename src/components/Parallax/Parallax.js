@@ -8,6 +8,7 @@ const Parallax = props => (
     {props.parallaxBlocks.map((block, i) => (
       <ParallaxBlock
         key={`parallax-block--${i}`}
+        idBlock={block.idBlock}
         opacityBlock={block.opacityBlock}
         heightBlock={block.heightBlock}
         bgImgBlock={block.bgImgBlock}

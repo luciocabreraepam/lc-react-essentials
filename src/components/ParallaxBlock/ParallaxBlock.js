@@ -5,6 +5,7 @@ import { ParallaxBlockBody } from './styles';
 const ParallaxBlock = props => (
   <>
     <ParallaxBlockBody
+      id={props.idBlock}
       opacityBlock={props.opacityBlock}
       heightBlock={props.heightBlock}
       bgImgBlock={props.bgImgBlock}
@@ -19,6 +20,12 @@ const ParallaxBlock = props => (
 );
 
 ParallaxBlock.propTypes = {
+  /** Block's Id Block.
+   * It is the HTML attribute id  that
+   * specifies a unique id for Parallax Block element.
+   * It can be used for the NavBar to navigate to this Block in the page
+   */
+  idBlock: PropTypes.string,
   /** Block's Body Opacity.
    * It is the CSS opacity property
    * that sets the opacity level for the Parallax Block body.

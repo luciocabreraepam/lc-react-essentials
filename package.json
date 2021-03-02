@@ -1,6 +1,6 @@
 {
   "name": "lc-react-essentials",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A simple yet awesome React Parallax component and some other essentials",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -22,6 +22,8 @@
     "basic components",
     "header",
     "button",
+    "navbar",
+    "responsive",
     "content"
   ],
   "author": "Lucio Cabrera",
@@ -41,6 +43,7 @@
     "rollup": "^2.40.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-svg-import": "^1.5.1",
     "rollup-plugin-terser": "^7.0.2",
     "styled-components": "^5.2.1"
   },
@@ -49,7 +52,6 @@
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/luciocabrera/lc-react-essentials.git"

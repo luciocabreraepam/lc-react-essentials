@@ -13,12 +13,15 @@ const HeaderImpact = props => (
     roundOnHover={props.roundOnHover}
   >
     {props.title}
+    {props.subtitle && <p>{props.subtitle}</p>}
   </HeaderImpactStyled>
 );
 
 HeaderImpact.propTypes = {
   /** Header's title */
   title: PropTypes.string.isRequired,
+  /** Header's subtitle */
+  subtitle: PropTypes.string,
   /** Header's font color.
    * It is the CSS color property
    * that sets the color of the text of the Header.

@@ -10,13 +10,13 @@ const ContentBlock = props => (
       <HeaderImpact
         backgroundColor='unset'
         title={props.title}
+        subtitle={props.subtitle}
         fontColor={props.fontColor}
         scaleOnHover={props.scaleHeaderOnHover}
         applyGlassOnHover={props.applyGlassHeaderOnHover}
         roundOnHover={props.roundHeaderOnHover}
       />
     )}
-    {props.subtitle && <p>{props.subtitle}</p>}
     {props.children}
   </ContentBlockStyled>
 );
