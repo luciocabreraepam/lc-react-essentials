@@ -3,7 +3,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import svg from 'rollup-plugin-svg-import';
 import { terser } from 'rollup-plugin-terser';
-//import postcss from 'rollup-plugin-postcss';
 
 export default {
   input: './src/index.js',
@@ -19,17 +18,24 @@ export default {
     }
   ],
   plugins: [
-    // postcss({
-    //   plugins: [],
-    //   minimize: true
-    // }),
     svg({
       // process SVG to DOM Node or String. Default: false
       stringify: false
     }),
     babel({
       exclude: 'node_modules/**',
-      presets: ['@babel/preset-react']
+      // https://styled-components.com/docs/tooling#minification
+      plugins: [
+        [
+          'babel-plugin-styled-components',
+          {
+            minify: true,
+            transpileTemplateLiterals: true,
+            pure: true
+          }
+        ]
+      ],
+      presets: ['@babel/preset-env', '@babel/preset-react']
     }),
     external(),
     resolve(),
@@ -37,3 +43,5 @@ export default {
   ],
   external: ['prop-types']
 };
+
+

@@ -2,34 +2,34 @@
 
 It is a small set of reusable **components** created  to implement web UIs consistently.
 
+Go to the Storybook and try things out https://lc-react-essentials-storybook.web.app/?path=/story/welcome-getting-started--page
+
 <br/>
 
+ <img src="src/assets/svg/npm.svg" alt="drawing" style="width:56px;"/>
+ <br/>
+https://www.npmjs.com/package/lc-react-essentials
 
+<br/><br/>
 
 ## 📦 How to install
 
-  <div id="npm" title="NPM"><div>
 
 ```sh
 npm install lc-react-essentials
 ```
 
-  </div></div>
-  <div id="yarn" title="Yarn"><div>
-
 ```sh
 yarn add lc-react-essentials
 ```
 
-  </div></div>
 <br/>
-
 
 
 
 ## 🚀 Usage
 
-Once installed, all you have to do is import components as needed, for example:
+Once installed, all you have to do is import the components as needed, for example:
 
 ```js
 import React from "react";
