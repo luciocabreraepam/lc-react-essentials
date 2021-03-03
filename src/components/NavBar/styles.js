@@ -16,6 +16,7 @@ export const NavBarStyled = styled.div`
   position: fixed;
   z-index: 1;
   top: 0;
+  left: 0;
   backdrop-filter: brightness(0.4);
   overflow: hidden;
 

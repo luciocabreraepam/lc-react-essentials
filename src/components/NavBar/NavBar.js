@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavBarStyled, MenuButtonStyled } from './styles';
-import hamburger from '../../assets/svg/hamburger.svg';
 import colors from '../../styles/colors';
 import useScrollPosition from '../../hooks/useScrollPosition';
 
@@ -39,7 +38,7 @@ const NavBar = props => {
       <NavItems routes={props.routes} />
       <MenuButtonStyled
         id='hamburger-button'
-        src={hamburger}
+        src={props.hamburgerButton}
         alt=''
         onClick={() => setShowMenuButton(!showMenuButton)}
       />
@@ -68,7 +67,11 @@ NavBar.propTypes = {
    * It is the CSS background-color property
    * that sets the background color of the NavBar.
    */
-  backgroundColor: PropTypes.string
+  backgroundColor: PropTypes.string,
+  /** NavBar's  Hamburger Button.
+   * It is the image to be shown as a hamburger button in the NavBar.
+   */
+  hamburgerButton: PropTypes.any.isRequired
 };
 
 NavBar.defaultProps = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavBar } from '../components/NavBar';
 import infoImage from './assets/info.svg';
+import hamburgerButton from './assets/hamburger.svg';
 
 const routes = [
   { text: 'Home', path: '#home', exact: true, icon: infoImage },
@@ -23,5 +24,6 @@ export const Default = Template.bind({});
 Default.args = {
   routes: routes,
   fontColor: 'white',
-  backgroundColor: 'black'
+  backgroundColor: 'black',
+  hamburgerButton: hamburgerButton
 };

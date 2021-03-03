@@ -9,6 +9,7 @@ import image_3 from './assets/image_3.jpg';
 import image_2 from './assets/image_2.jpg';
 import image_1 from './assets/image_1.jpg';
 import infoImage from './assets/info.svg';
+import hamburgerButton from './assets/hamburger.svg';
 import colors from '../styles/colors';
 
 const routes = [
@@ -95,7 +96,7 @@ export default {
 const Template = args =>
   args.routes ? (
     <>
-      <NavBar routes={args.routes} />
+      <NavBar routes={args.routes} hamburgerButton={args.hamburgerButton} />
       <Parallax parallaxBlocks={args.parallaxBlocks} />
     </>
   ) : (
@@ -110,5 +111,6 @@ Basic.args = {
 export const WithNavBar = Template.bind({});
 WithNavBar.args = {
   parallaxBlocks: parallaxBlocks,
-  routes: routes
+  routes: routes,
+  hamburgerButton: hamburgerButton
 };
