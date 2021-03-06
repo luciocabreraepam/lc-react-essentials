@@ -71,7 +71,12 @@ Field.propTypes = {
    * It is the color set in the CSS color property
    * of the label itself
    */
-  labelFontColor: PropTypes.string
+  labelFontColor: PropTypes.string,
+  /** Field's Input's font color.
+   * It is the color set in the CSS color property
+   * that sets the background color for the Inputs within the form.
+   */
+  inputFontColor: PropTypes.string
 };
 
 Field.defaultProps = {

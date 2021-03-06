@@ -27,7 +27,7 @@ Input.propTypes = {
    * It is the CSS color property
    * that sets the color of the text.
    */
-  fontColor: PropTypes.string,
+  inputFontColor: PropTypes.string,
   /** Input's background color.
    * It is the CSS background property
    */
@@ -40,7 +40,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   type: 'input',
-  fontColor: 'black',
+  inputFontColor: 'black',
   backgroundColor: 'transparent',
   border: 'none'
 };

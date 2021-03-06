@@ -5,6 +5,7 @@ export const FormStyled = styled.form`
   border-radius: 18px;
   padding: 4vh 6vw;
   min-width: 80%;
+  color: ${({ fontColor }) => fontColor};
 `;
 
 export const ButtonsWrapper = styled.div`

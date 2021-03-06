@@ -4,6 +4,6 @@ export const InputStyled = styled.input`
   height: 24px;
   background: ${({ backgroundColor }) => backgroundColor};
   border: ${({ border }) => border};
-  color: ${({ fontColor }) => fontColor};
+  color: ${({ inputFontColor }) => inputFontColor};
   width: 100%;
 `;

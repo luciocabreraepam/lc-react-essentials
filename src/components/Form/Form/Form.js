@@ -38,7 +38,7 @@ const Form = props => {
         key={`field-${field.accessor}`}
         value={data[field.accessor]}
         onChange={onChange}
-        fontColor={props.fontColor}
+        inputFontColor={props.inputFontColor}
         backgroundColor={props.backgroundColor}
         border={props.border}
         errorFontColor={props.errorFontColor}
@@ -52,7 +52,11 @@ const Form = props => {
   });
 
   return (
-    <FormStyled noValidate backdropFilter={props.backdropFilter}>
+    <FormStyled
+      noValidate
+      backdropFilter={props.backdropFilter}
+      fontColor={props.fontColor}
+    >
       {props.title && <h1>{props.title}</h1>}
       {props.subtitle && <h4>{props.subtitle}</h4>}
       {fields}
@@ -77,7 +81,7 @@ Form.propTypes = {
   subtitle: PropTypes.string,
   /** It is the method to be executed when submiting the form if there is not errors*/
   onAccept: PropTypes.func,
-  /** Form's Input's font color.
+  /** Form's Title and subtitle's font color.
    * It is the CSS color property
    * that sets the color of the text for the Inputs within the form.
    */
@@ -111,6 +115,11 @@ Form.propTypes = {
    * of the labels withing the form
    */
   labelFontColor: PropTypes.string,
+  /** Form's Input's font color.
+   * It is the color set in the CSS color property
+   * that sets the background color for the Inputs within the form.
+   */
+  inputFontColor: PropTypes.string,
   /** Form's backdrop Filter.
    * It is the CSS backdrop-filter property
    * to be applied to the form element
