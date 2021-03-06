@@ -6,9 +6,11 @@ Go to the Storybook and try things out https://lc-react-essentials-storybook.web
 
 <br/>
 
- <img src="src/assets/svg/npm.svg" alt="drawing" style="width:56px;"/>
+
+## 📦 NPM
  <br/>
-https://www.npmjs.com/package/lc-react-essentials
+ 
+[See on NPM](https://www.npmjs.com/package/lc-react-essentials)
 
 <br/><br/>
 

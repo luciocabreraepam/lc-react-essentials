@@ -12,7 +12,7 @@ export const MenuButtonStyled = styled.img`
 export const NavBarStyled = styled.div`
   color: ${({ fontColor }) => fontColor};
   background-color: ${({ backgroundColor }) => backgroundColor};
-  width: 100vw;
+  width: 100%;
   position: fixed;
   z-index: 1;
   top: 0;

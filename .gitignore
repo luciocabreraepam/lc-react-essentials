@@ -2,3 +2,4 @@ node_modules
 dist
 storybook-static
 src/stories/.DS_Store
+.DS_Store

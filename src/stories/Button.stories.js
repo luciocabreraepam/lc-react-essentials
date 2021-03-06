@@ -6,7 +6,9 @@ export default {
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
-    fontColor: { control: 'color' }
+    fontColor: { control: 'color' },
+    backgroundColorOnHover: { control: 'color' },
+    fontColorOnHover: { control: 'color' }
   }
 };
 

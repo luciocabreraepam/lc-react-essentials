@@ -95,10 +95,10 @@ export default {
 
 const Template = args =>
   args.routes ? (
-    <>
+    <div>
       <NavBar routes={args.routes} hamburgerButton={args.hamburgerButton} />
       <Parallax parallaxBlocks={args.parallaxBlocks} />
-    </>
+    </div>
   ) : (
     <Parallax {...args} />
   );

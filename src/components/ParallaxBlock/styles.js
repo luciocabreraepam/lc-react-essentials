@@ -12,7 +12,6 @@ export const ParallaxBlockBody = styled.div`
   display: grid;
   place-items: center;
   padding: 2vw;
-  width: 100vw;
   left: 0;
   margin: 0px;
 
