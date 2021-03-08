@@ -11,6 +11,7 @@ import image_1 from './assets/image_1.jpg';
 import infoImage from './assets/info.svg';
 import hamburgerButton from './assets/hamburger.svg';
 import colors from '../styles/colors';
+import { ParallaxBlock } from '../components/ParallaxBlock';
 
 const routes = [
   { text: 'Home', path: '#home', exact: true, icon: infoImage },
@@ -100,7 +101,39 @@ const Template = args =>
       <Parallax parallaxBlocks={args.parallaxBlocks} />
     </div>
   ) : (
-    <Parallax {...args} />
+    <Parallax>
+      <ParallaxBlock
+        key='parallax-block--home'
+        idBlock='home'
+        bgImgBlock={`linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(${image_1})`}
+        footer={
+          <DescriptionBlock
+            title='Cleaning is a need'
+            description='Keeping your house clean and free of bacterias and dust is not an option but a need, and nowadays is even more important to ensure that your environment is perfectly clean and disinfected.'
+            fontColor={colors.gray.light}
+            backgroundColor={colors.light}
+          />
+        }
+      >
+        <ContentBlock
+          title='CleanNL'
+          subtitle={`Because cleaning is caring....`}
+          scaleHeaderOnHover
+        >
+          <>
+            <Button
+              label='Contact us'
+              backgroundColor='darkgoldenrod'
+              fontColor='white'
+            />
+          </>
+        </ContentBlock>
+      </ParallaxBlock>
+    </Parallax>
   );
 
 export const Basic = Template.bind({});

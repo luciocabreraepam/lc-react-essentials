@@ -15,6 +15,7 @@ const ContentBlock = props => (
         scaleOnHover={props.scaleHeaderOnHover}
         applyGlassOnHover={props.applyGlassHeaderOnHover}
         roundOnHover={props.roundHeaderOnHover}
+        size={props.titleSize}
       />
     )}
     {props.children}
@@ -51,14 +52,19 @@ ContentBlock.propTypes = {
    * It uses the CSS border-radiusproperty that sets
    * the radius of the header's corners when hovering over it .
    */
-  roundHeaderOnHover: PropTypes.bool
+  roundHeaderOnHover: PropTypes.bool,
+  /** Content block's header's size.
+   * It uses the CSS font-size
+   */
+  titleSize: PropTypes.oneOf(['sm', 'md', 'lg'])
 };
 
 ContentBlock.defaultProps = {
   fontColor: colors.light,
   scaleHeaderOnHover: false,
   applyGlassHeaderOnHover: false,
-  roundHeaderOnHover: false
+  roundHeaderOnHover: false,
+  titleSize: 'lg'
 };
 
 export default ContentBlock;

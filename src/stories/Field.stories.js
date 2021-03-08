@@ -8,7 +8,8 @@ export default {
     errorFontColor: { control: 'color' },
     isRequiredFontColor: { control: 'color' },
     fieldBorderColor: { control: 'color' },
-    labelFontColor: { control: 'color' }
+    labelFontColor: { control: 'color' },
+    inputFontColor: { control: 'color' }
   }
 };
 

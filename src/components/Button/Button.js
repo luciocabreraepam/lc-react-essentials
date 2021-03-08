@@ -3,17 +3,7 @@ import PropTypes from 'prop-types';
 import { ButtonStyled } from './styles';
 import colors from '../../styles/colors';
 
-const Button = props => (
-  <ButtonStyled
-    fontColor={props.fontColor}
-    backgroundColor={props.backgroundColor}
-    fontColorOnHover={props.fontColorOnHover}
-    backgroundColorOnHover={props.backgroundColorOnHover}
-    {...props}
-  >
-    {props.label}
-  </ButtonStyled>
-);
+const Button = props => <ButtonStyled {...props}>{props.label}</ButtonStyled>;
 
 Button.propTypes = {
   /** Button's font color.

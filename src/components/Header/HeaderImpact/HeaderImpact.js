@@ -11,6 +11,7 @@ const HeaderImpact = props => (
     scaleOnHover={props.scaleOnHover}
     applyGlassOnHover={props.applyGlassOnHover}
     roundOnHover={props.roundOnHover}
+    size={props.size}
   >
     {props.title}
     {props.subtitle && <p>{props.subtitle}</p>}
@@ -67,7 +68,11 @@ HeaderImpact.propTypes = {
    * It uses the CSS border-radiusproperty that sets
    * the radius of the header's corners when hovering over it .
    */
-  roundOnHover: PropTypes.bool
+  roundOnHover: PropTypes.bool,
+  /** Header's size.
+   * It uses the CSS font-size
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'lg'])
 };
 
 HeaderImpact.defaultProps = {
@@ -76,6 +81,7 @@ HeaderImpact.defaultProps = {
   blendMode: 'normal',
   scaleOnHover: false,
   applyGlassOnHover: false,
-  roundOnHover: false
+  roundOnHover: false,
+  size:'md'
 };
 export default HeaderImpact;

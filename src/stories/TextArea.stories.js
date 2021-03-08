@@ -6,7 +6,7 @@ export default {
   component: TextArea,
   argTypes: {
     backgroundColor: { control: 'color' },
-    fontColor: { control: 'color' }
+    inputFontColor: { control: 'color' }
   }
 };
 

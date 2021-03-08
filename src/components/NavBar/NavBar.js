@@ -12,7 +12,7 @@ const NavItems = ({ routes }) =>
   routes.map((route, i) => (
     <Link key={`nav-item-${i}`} to={route.path} exact={route.exact}>
       <>
-        <img src={route.icon} alt={route.tex} />
+        {route.icon && <img src={route.icon} alt={route.tex} />}
         {route.text}
       </>
     </Link>
@@ -32,6 +32,8 @@ const NavBar = props => {
     <NavBarStyled
       fontColor={props.fontColor}
       backgroundColor={props.backgroundColor}
+      fontColorOnHover={props.fontColorOnHover}
+      backgroundColorOnHover={props.backgroundColorOnHover}
       highlightOnScroll={highlightOnScroll}
       showMenuButton={showMenuButton}
     >
@@ -71,11 +73,23 @@ NavBar.propTypes = {
   /** NavBar's  Hamburger Button.
    * It is the image to be shown as a hamburger button in the NavBar.
    */
-  hamburgerButton: PropTypes.any.isRequired
+  hamburgerButton: PropTypes.any.isRequired,
+  /** NavBar's font color when hovering..
+   * It is the CSS color property
+   * that sets the color of the text of the NavBar when hovering.
+   */
+  fontColorOnHover: PropTypes.string,
+  /** NavBar's  Background color when hovering.
+   * It is the CSS background-color property
+   * that sets the background color of the NavBar when hovering..
+   */
+  backgroundColorOnHover: PropTypes.string
 };
 
 NavBar.defaultProps = {
-  fontColor: colors.gray.light
+  fontColor: colors.gray.light,
+  backgroundColorOnHover: colors.gray.light,
+  fontColorOnHover: colors.gray.dark
 };
 
 export default NavBar;

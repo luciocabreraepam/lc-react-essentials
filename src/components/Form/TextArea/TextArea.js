@@ -22,7 +22,7 @@ TextArea.propTypes = {
    * It is the CSS color property
    * that sets the color of the text.
    */
-   inputFontColor: PropTypes.string,
+  inputFontColor: PropTypes.string,
   /** TextArea's background color.
    * It is the CSS background property
    */

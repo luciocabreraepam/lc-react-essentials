@@ -31,23 +31,24 @@ export const HeaderImpactStyled = styled.h1`
     `}
   }
 
+  
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 600px) {
-    font-size: 8vw;
+    font-size:  ${({ size }) => (size === 'md' ? 7 : size === 'sm' ? 6 : 8)}vw;
     margin-right: 8vw;
     margin-left: 8vw;
   }
 
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 601px) {
-    font-size: 6vw;
+    font-size: ${({ size }) => (size === 'md' ? 5 : size === 'sm' ? 4 : 6)}vw;
     margin-right: 8vw;
     margin-left: 8vw;
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
-    font-size: 5vw;
+    font-size: ${({ size }) => (size === 'md' ? 4 : size === 'sm' ? 3 : 5)}vw;
     margin-right: 14vw;
     margin-left: 14vw;
   }

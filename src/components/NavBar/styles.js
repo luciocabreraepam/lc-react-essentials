@@ -41,8 +41,9 @@ export const NavBarStyled = styled.div`
     place-items: center;
     background-color: inherit;
     :hover {
-      color: black;
-      background-color: #ddd;
+      background-color: ${({ backgroundColorOnHover }) =>
+        backgroundColorOnHover};
+      color: ${({ fontColorOnHover }) => fontColorOnHover};
     }
   }
 
