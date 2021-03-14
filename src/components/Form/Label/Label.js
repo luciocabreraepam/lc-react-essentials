@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { LabelStyled } from './styles';
 
-const Label = props => <LabelStyled {...props}>{props.children}</LabelStyled>;
+const Label = props => (
+  <LabelStyled labelFontColor={props.labelFontColor}>
+    {props.children}
+  </LabelStyled>
+);
 
 Label.propTypes = {
   /** Children for label */

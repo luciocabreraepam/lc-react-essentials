@@ -8,8 +8,12 @@ const Input = React.forwardRef((props, ref) => (
     id={props.accessor}
     name={props.accessor}
     placeholder={`Please enter ${props.label}`}
+    value={props.value || ''}
+    backgroundColor={props.backgroundColor}
+    border={props.border}
+    inputFontColor={props.inputFontColor}
     onChange={event => props.onChange(event)}
-    {...props}
+    type={props.type}
   />
 ));
 
@@ -19,10 +23,12 @@ Input.propTypes = {
   /** Field's label which will be used as
    * Input's placeholder. */
   label: PropTypes.string,
+  /** Input's value. */
+  value: PropTypes.string,
   /** Input's type.
    * Specifies the type of input element
    */
-  type: PropTypes.oneOf(['input', 'email', 'number']),
+  type: PropTypes.oneOf(['input', 'text', 'email', 'number']),
   /** Input's font color.
    * It is the CSS color property
    * that sets the color of the text.
@@ -39,7 +45,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  type: 'input',
+  type: 'text',
   inputFontColor: 'black',
   backgroundColor: 'transparent',
   border: 'none'

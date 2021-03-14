@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from '../components/Form/Form';
+import  { Form } from '../components/Form/Form';
 
 export default {
   title: 'Components/Form/Form',
@@ -21,6 +21,7 @@ const Template = args => <Form {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  data: {input:'ASAASSA'},
   buttonBackgroundColor: 'darkgoldenrod',
   buttonFontColor: 'white',
   title: 'This is a title',

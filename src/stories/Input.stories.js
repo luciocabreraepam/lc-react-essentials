@@ -10,7 +10,13 @@ export default {
   }
 };
 
-const Template = args => <Input {...args} />;
+const Template = args =>
+  React.createElement(() => {
+    const [state, setState] = React.useState();
+    return (
+      <Input value={state} onChange={e => setState(e.target.value)} {...args} />
+    );
+  });
 
 export const Default = Template.bind({});
 Default.args = {

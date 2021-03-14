@@ -12,6 +12,7 @@ const HeaderImpact = props => (
     applyGlassOnHover={props.applyGlassOnHover}
     roundOnHover={props.roundOnHover}
     size={props.size}
+    className={props.customClass}
   >
     {props.title}
     {props.subtitle && <p>{props.subtitle}</p>}
@@ -72,7 +73,11 @@ HeaderImpact.propTypes = {
   /** Header's size.
    * It uses the CSS font-size
    */
-  size: PropTypes.oneOf(['sm', 'md', 'lg'])
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  /** Header's custom CSS class name.
+   * It can be used to implement custom css rules on the Header
+   */
+  customClass: PropTypes.string
 };
 
 HeaderImpact.defaultProps = {
@@ -82,6 +87,6 @@ HeaderImpact.defaultProps = {
   scaleOnHover: false,
   applyGlassOnHover: false,
   roundOnHover: false,
-  size:'md'
+  size: 'md'
 };
 export default HeaderImpact;

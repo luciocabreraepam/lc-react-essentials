@@ -129,10 +129,12 @@ export const isEmail = val => {
   return regEmail.test(val);
 };
 
-export const getInitialData = fields => {
-  const initialData = {};
+export const getInitialData = (fields, initialData) => {
+  const newData = {};
   fields.forEach(field => {
-    initialData[field.accessor] = field.value || '';
+    newData[field.accessor] = initialData
+      ? initialData[field.accessor]
+      : field.value || '';
   });
-  return initialData;
+  return newData;
 };

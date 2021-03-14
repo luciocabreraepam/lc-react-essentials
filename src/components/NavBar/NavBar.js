@@ -4,21 +4,22 @@ import { NavBarStyled, MenuButtonStyled } from './styles';
 import colors from '../../styles/colors';
 import useScrollPosition from '../../hooks/useScrollPosition';
 
-const Link = ({ to, children }) => {
-  return <a href={to}>{children}</a>;
-};
+const Link = ({ to, children }) => <a href={to}>{children}</a>;
+
+const Icon = ({ icon, text }) =>
+  typeof icon === 'string' ? <img src={icon} alt={text} /> : icon;
 
 const NavItems = ({ routes }) =>
   routes.map((route, i) => (
     <Link key={`nav-item-${i}`} to={route.path} exact={route.exact}>
       <>
-        {route.icon && <img src={route.icon} alt={route.tex} />}
+        {route.icon && <Icon icon={route.icon} text={route.text} />}
         {route.text}
       </>
     </Link>
   ));
 
-const NavBar = props => {
+const NavBar = (props) => {
   const [showMenuButton, setShowMenuButton] = useState();
   const [highlightOnScroll, setHighlightOnScroll] = useState(true);
 
@@ -28,6 +29,7 @@ const NavBar = props => {
       setHighlightOnScroll(isShow);
     }
   });
+
   return (
     <NavBarStyled
       fontColor={props.fontColor}
@@ -57,7 +59,9 @@ NavBar.propTypes = {
       /** Text to display for the route */
       text: PropTypes.string.isRequired,
       /** Match the route exact: true [default] OR false */
-      exact: PropTypes.bool
+      exact: PropTypes.bool,
+      /** The icon to be shown next to the text */
+      icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
     })
   ).isRequired,
   /** NavBar's font color.
@@ -89,7 +93,7 @@ NavBar.propTypes = {
 NavBar.defaultProps = {
   fontColor: colors.gray.light,
   backgroundColorOnHover: colors.gray.light,
-  fontColorOnHover: colors.gray.dark
+  fontColorOnHover: colors.gray.dark,
 };
 
 export default NavBar;

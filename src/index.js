@@ -11,3 +11,5 @@ export * from './components/Form/Field';
 export * from './components/Form/Form';
 export * from './components/Form/Input';
 export * from './components/Form/TextArea';
+
+export * from './components/Portal';

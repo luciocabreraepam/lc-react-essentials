@@ -7,8 +7,11 @@ const TextArea = props => (
     id={props.accessor}
     name={props.accessor}
     placeholder={`Please enter ${props.label}`}
+    value={props.value}
+    backgroundColor={props.backgroundColor}
+    border={props.border}
+    inputFontColor={props.inputFontColor}
     onChange={event => props.onChange(event)}
-    {...props}
   />
 );
 
@@ -18,6 +21,8 @@ TextArea.propTypes = {
   /** Field's label which will be used as
    * TextArea's placeholder. */
   label: PropTypes.string,
+  /** TextArea's value. */
+  value: PropTypes.string,
   /** TextArea's font color.
    * It is the CSS color property
    * that sets the color of the text.

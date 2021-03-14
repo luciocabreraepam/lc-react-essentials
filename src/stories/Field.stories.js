@@ -13,24 +13,26 @@ export default {
   }
 };
 
-const Template = args => <Field {...args} />;
+const Template = args =>
+  React.createElement(() => {
+    const [state, setState] = React.useState();
+    return (
+      <Field value={state} onChange={e => setState(e.target.value)} {...args} />
+    );
+  });
 
 export const Default = Template.bind({});
 Default.args = {
   label: 'First Name',
-  accessor:'firstName',
-  value: 'Lucio',
-  required:true,
-  onChange: () => alert(`field's onChange fired`)
+  accessor: 'firstName',
+  required: true
 };
 
 export const WithError = Template.bind({});
 WithError.args = {
   label: 'First Name',
-  accessor:'firstName',
-  value: 'Lucio',
-  required:true,
-  hasErrors:true,
-  errorMessage:'This an error message',
-  onChange: () => alert(`field's onChange fired`)
+  accessor: 'firstName',
+  required: true,
+  hasErrors: true,
+  errorMessage: 'This an error message'
 };

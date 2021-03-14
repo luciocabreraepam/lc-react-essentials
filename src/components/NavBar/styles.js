@@ -20,8 +20,10 @@ export const NavBarStyled = styled.div`
   backdrop-filter: brightness(0.4);
   overflow: hidden;
 
-  img {
+  img,
+  svg {
     height: 21px;
+    width: 21px;
     padding-right: 8px;
   }
 
