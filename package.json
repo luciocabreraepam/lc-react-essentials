@@ -1,6 +1,6 @@
 {
   "name": "lc-react-essentials",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "A simple yet awesome React Parallax component and some other essentials",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

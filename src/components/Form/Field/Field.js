@@ -36,7 +36,7 @@ const getNodeByType = props => {
 
 const Field = props => (
   <FieldStyled fieldBorderColor={props.fieldBorderColor}>
-    <Label labelFontColor={props.labelFontColor}>
+    <Label htmlFor={props.accessor} labelFontColor={props.labelFontColor}>
       {props.label}
       {props.required && (
         <IsRequired isRequiredFontColor={props.isRequiredFontColor}>

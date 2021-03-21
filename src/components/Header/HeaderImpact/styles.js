@@ -22,6 +22,7 @@ export const HeaderImpactStyled = styled.h1`
       `
       background-color: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(1px) saturate(50%) contrast(75%) brightness(45%);
+      -webkit-backdrop-filter: blur(1px) saturate(50%) contrast(75%) brightness(45%);
 
     `}
     ${({ roundOnHover }) =>
@@ -33,22 +34,15 @@ export const HeaderImpactStyled = styled.h1`
 
   
   /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {
-    font-size:  ${({ size }) => (size === 'md' ? 7 : size === 'sm' ? 6 : 8)}vw;
-    margin-right: 8vw;
-    margin-left: 8vw;
-  }
-
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 601px) {
-    font-size: ${({ size }) => (size === 'md' ? 5 : size === 'sm' ? 4 : 6)}vw;
+  @media only screen and (max-width: 1199px) {
+    font-size:  ${({ size }) => (size === 'md' ? 7 : size === 'sm' ? 6 : 9)}vw;
     margin-right: 8vw;
     margin-left: 8vw;
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
-    font-size: ${({ size }) => (size === 'md' ? 4 : size === 'sm' ? 3 : 5)}vw;
+    font-size: ${({ size }) => (size === 'md' ? 5 : size === 'sm' ? 4 : 7)}vw;
     margin-right: 14vw;
     margin-left: 14vw;
   }

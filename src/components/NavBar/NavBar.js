@@ -6,20 +6,25 @@ import useScrollPosition from '../../hooks/useScrollPosition';
 
 const Link = ({ to, children }) => <a href={to}>{children}</a>;
 
-const Icon = ({ icon, text }) =>
-  typeof icon === 'string' ? <img src={icon} alt={text} /> : icon;
-
-const NavItems = ({ routes }) =>
+const NavItems = ({ routes, fontColor, fontColorOnHover }) =>
   routes.map((route, i) => (
     <Link key={`nav-item-${i}`} to={route.path} exact={route.exact}>
       <>
-        {route.icon && <Icon icon={route.icon} text={route.text} />}
+        {route.icon &&
+          (typeof route.icon === 'string' ? (
+            <img src={route.icon} alt={route.text} />
+          ) : (
+            <route.icon
+              mainColor={fontColor}
+              fontColorOnHover={fontColorOnHover}
+            />
+          ))}
         {route.text}
       </>
     </Link>
   ));
 
-const NavBar = (props) => {
+const NavBar = props => {
   const [showMenuButton, setShowMenuButton] = useState();
   const [highlightOnScroll, setHighlightOnScroll] = useState(true);
 
@@ -30,22 +35,43 @@ const NavBar = (props) => {
     }
   });
 
+  const fontColor = !highlightOnScroll
+    ? props.highlightOnScrollFontColor
+    : props.fontColor;
+  const fontColorOnHover = !highlightOnScroll
+    ? props.highlightOnScrollFontColorOnHover
+    : props.fontColorOnHover;
+
   return (
     <NavBarStyled
-      fontColor={props.fontColor}
+      fontColor={fontColor}
       backgroundColor={props.backgroundColor}
       fontColorOnHover={props.fontColorOnHover}
       backgroundColorOnHover={props.backgroundColorOnHover}
+      highlightOnScrollFontColor={props.highlightOnScrollFontColor}
+      highlightOnScrollBackColor={props.highlightOnScrollBackColor}
       highlightOnScroll={highlightOnScroll}
       showMenuButton={showMenuButton}
+      className={props.customClass}
     >
-      <NavItems routes={props.routes} />
+      <NavItems
+        routes={props.routes}
+        fontColor={fontColor}
+        fontColorOnHover={fontColorOnHover}
+      />
       <MenuButtonStyled
         id='hamburger-button'
-        src={props.hamburgerButton}
-        alt=''
         onClick={() => setShowMenuButton(!showMenuButton)}
-      />
+      >
+        {typeof props.hamburgerButton === 'string' ? (
+          <img src={props.hamburgerButton} alt={''} />
+        ) : (
+          <props.hamburgerButton
+            mainColor={fontColor}
+            fontColorOnHover={fontColorOnHover}
+          />
+        )}
+      </MenuButtonStyled>
     </NavBarStyled>
   );
 };
@@ -61,7 +87,11 @@ NavBar.propTypes = {
       /** Match the route exact: true [default] OR false */
       exact: PropTypes.bool,
       /** The icon to be shown next to the text */
-      icon: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+      icon: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node,
+        PropTypes.element
+      ])
     })
   ).isRequired,
   /** NavBar's font color.
@@ -94,6 +124,7 @@ NavBar.defaultProps = {
   fontColor: colors.gray.light,
   backgroundColorOnHover: colors.gray.light,
   fontColorOnHover: colors.gray.dark,
+  highlightOnScrollBackColor: colors.light
 };
 
 export default NavBar;
