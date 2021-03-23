@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { breakPoints } from '../../../stories/utils/breakPoints';
 
 export const DescriptionBlockStyled = styled.div`
-  color: ${props => props.fontColor};
-  background-color: ${props => props.backgroundColor};
+  color: ${({  theme }) => theme.descriptionBlock.text };
+  background-color: ${({ theme }) => theme.descriptionBlock.background };
   text-align: center;
   z-index: 1;
 
@@ -14,10 +14,14 @@ export const DescriptionBlockStyled = styled.div`
   h3 {
     text-align: center;
     margin-top: 0px;
+    color: ${({  theme }) => theme.headerBlock.text };
+    background-color: ${({  theme }) => theme.headerBlock.background };
   }
   hr {
     margin-bottom: 24px;
     border: 1px solid;
     width: 25%;
+    color: ${({  theme }) => theme.dividerBlock.text };
+    background-color: ${({  theme }) => theme.dividerBlock.background };
   }
 `;
