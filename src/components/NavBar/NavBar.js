@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavBarStyled, MenuButtonStyled } from './styles';
-import colors from '../../styles/colors';
 import useScrollPosition from '../../hooks/useScrollPosition';
 
 const Link = ({ to, children }) => <a href={to}>{children}</a>;
 
-const NavItems = ({ routes, fontColor, fontColorOnHover }) =>
+const NavItems = ({ routes }) =>
   routes.map((route, i) => (
     <Link key={`nav-item-${i}`} to={route.path} exact={route.exact}>
       <>
@@ -14,10 +13,7 @@ const NavItems = ({ routes, fontColor, fontColorOnHover }) =>
           (typeof route.icon === 'string' ? (
             <img src={route.icon} alt={route.text} />
           ) : (
-            <route.icon
-              mainColor={fontColor}
-              fontColorOnHover={fontColorOnHover}
-            />
+            <route.icon />
           ))}
         {route.text}
       </>
@@ -35,30 +31,13 @@ const NavBar = props => {
     }
   });
 
-  const fontColor = !highlightOnScroll
-    ? props.highlightOnScrollFontColor
-    : props.fontColor;
-  const fontColorOnHover = !highlightOnScroll
-    ? props.highlightOnScrollFontColorOnHover
-    : props.fontColorOnHover;
-
   return (
     <NavBarStyled
-      fontColor={fontColor}
-      backgroundColor={props.backgroundColor}
-      fontColorOnHover={props.fontColorOnHover}
-      backgroundColorOnHover={props.backgroundColorOnHover}
-      highlightOnScrollFontColor={props.highlightOnScrollFontColor}
-      highlightOnScrollBackColor={props.highlightOnScrollBackColor}
       highlightOnScroll={highlightOnScroll}
       showMenuButton={showMenuButton}
       className={props.customClass}
     >
-      <NavItems
-        routes={props.routes}
-        fontColor={fontColor}
-        fontColorOnHover={fontColorOnHover}
-      />
+      <NavItems  routes={props.routes}/>
       <MenuButtonStyled
         id='hamburger-button'
         onClick={() => setShowMenuButton(!showMenuButton)}
@@ -66,10 +45,7 @@ const NavBar = props => {
         {typeof props.hamburgerButton === 'string' ? (
           <img src={props.hamburgerButton} alt={''} />
         ) : (
-          <props.hamburgerButton
-            mainColor={fontColor}
-            fontColorOnHover={fontColorOnHover}
-          />
+          <props.hamburgerButton />
         )}
       </MenuButtonStyled>
     </NavBarStyled>
@@ -94,37 +70,11 @@ NavBar.propTypes = {
       ])
     })
   ).isRequired,
-  /** NavBar's font color.
-   * It is the CSS color property
-   * that sets the color of the text of the NavBar.
-   */
-  fontColor: PropTypes.string,
-  /** NavBar's  Background color.
-   * It is the CSS background-color property
-   * that sets the background color of the NavBar.
-   */
-  backgroundColor: PropTypes.string,
+
   /** NavBar's  Hamburger Button.
    * It is the image to be shown as a hamburger button in the NavBar.
    */
   hamburgerButton: PropTypes.any.isRequired,
-  /** NavBar's font color when hovering..
-   * It is the CSS color property
-   * that sets the color of the text of the NavBar when hovering.
-   */
-  fontColorOnHover: PropTypes.string,
-  /** NavBar's  Background color when hovering.
-   * It is the CSS background-color property
-   * that sets the background color of the NavBar when hovering..
-   */
-  backgroundColorOnHover: PropTypes.string
-};
-
-NavBar.defaultProps = {
-  fontColor: colors.gray.light,
-  backgroundColorOnHover: colors.gray.light,
-  fontColorOnHover: colors.gray.dark,
-  highlightOnScrollBackColor: colors.light
 };
 
 export default NavBar;

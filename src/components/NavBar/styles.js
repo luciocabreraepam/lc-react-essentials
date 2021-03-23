@@ -10,8 +10,11 @@ export const MenuButtonStyled = styled.div`
 `;
 
 export const NavBarStyled = styled.div`
-  color: ${({ fontColor }) => fontColor};
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  color: ${({  theme }) => theme.navbar.default.text };
+  background-color: ${({ theme }) => theme.navbar.default.background };
+  svg {
+    fill: ${({ theme }) => theme.navbar.default.text };
+  }
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -44,11 +47,11 @@ export const NavBarStyled = styled.div`
     place-items: center;
     background-color: inherit;
     :hover {
-      background-color: ${({ backgroundColorOnHover }) =>
-        backgroundColorOnHover};
-      color: ${({ fontColorOnHover }) => fontColorOnHover};
+      background-color: ${({ theme }) =>
+      theme.navbar.default.onHover.background};
+      color: ${({  theme }) => theme.navbar.default.onHover.text};
       svg {
-        fill: ${({ fontColorOnHover }) => fontColorOnHover};
+        fill: ${({  theme  }) => theme.navbar.default.onHover.text};
       }
     }
   }
@@ -74,15 +77,14 @@ export const NavBarStyled = styled.div`
 
   ${({
     highlightOnScroll,
-    highlightOnScrollFontColor,
-    highlightOnScrollBackColor
+    theme
   }) =>
     !highlightOnScroll &&
     `
-    color: ${highlightOnScrollFontColor};
-    background-color: ${highlightOnScrollBackColor};
+    color: ${theme.navbar.onScrollFontColor.text};
+    background-color: ${theme.navbar.onScrollFontColor.background};
     svg {
-      fill: ${highlightOnScrollFontColor};
+      fill: ${theme.navbar.onScrollFontColor.text};
     }
     a {
       height: 3vh !important;
