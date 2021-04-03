@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Portal } from 'lc-react-essentials';
+import { Portal } from '../Portal';
 import {
   ModalWrapper,
   ModalCard,
