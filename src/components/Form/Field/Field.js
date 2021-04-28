@@ -15,6 +15,7 @@ const getNodeByType = props => {
           border={props.border}
           inputFontColor={props.inputFontColor}
           value={props.value}
+          placeholder={props.placeholder}
           onChange={event => props.onChange(event)}
         />
       );
@@ -28,6 +29,7 @@ const getNodeByType = props => {
           border={props.border}
           inputFontColor={props.inputFontColor}
           value={props.value}
+          placeholder={props.placeholder}
           onChange={event => props.onChange(event)}
         />
       );
@@ -60,6 +62,8 @@ Field.propTypes = {
    * Specifies the type of input element to be displayed
    */
   type: PropTypes.oneOf(['input', 'text', 'email', 'number', 'textarea']),
+  /** Input's placeholder. */
+  placeholder: PropTypes.string,
   /** Field's  is required.
    * Specifies whether the field is mandatory or not
    * , will display a star if so

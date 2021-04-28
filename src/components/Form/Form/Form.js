@@ -62,7 +62,7 @@ const Form = props => {
       {fields}
       <ButtonsWrapper>
         <Button
-          label='Submit'
+          label={props.onAcceptButtonLabel}
           type='submit'
           backgroundColor={props.buttonBackgroundColor}
           fontColor={props.buttonFontColor}
@@ -82,6 +82,9 @@ Form.propTypes = {
   title: PropTypes.string,
   /** Form's subtitle */
   subtitle: PropTypes.string,
+  /** Form's Accept button label
+   */
+  onAcceptButtonLabel: PropTypes.string,
   /** It is the method to be executed when submiting the form if there is not errors*/
   onAccept: PropTypes.func,
   /** Form's Title and subtitle's font color.

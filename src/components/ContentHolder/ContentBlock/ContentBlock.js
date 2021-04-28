@@ -24,7 +24,11 @@ const ContentBlock = props => (
 
 ContentBlock.propTypes = {
   /** Content block's title */
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+    PropTypes.element
+  ]),
   /** Content block's subtitle */
   subtitle: PropTypes.string,
   /** Content block's font color.

@@ -7,7 +7,7 @@ const Input = React.forwardRef((props, ref) => (
     ref={ref}
     id={props.accessor}
     name={props.accessor}
-    placeholder={`Please enter ${props.label}`}
+    placeholder={props.placeholder}
     value={props.value || ''}
     backgroundColor={props.backgroundColor}
     border={props.border}
@@ -20,9 +20,8 @@ const Input = React.forwardRef((props, ref) => (
 Input.propTypes = {
   /** Input's accessor.*/
   accessor: PropTypes.string,
-  /** Field's label which will be used as
-   * Input's placeholder. */
-  label: PropTypes.string,
+  /** Input's placeholder. */
+   placeholder: PropTypes.string,
   /** Input's value. */
   value: PropTypes.string,
   /** Input's type.
