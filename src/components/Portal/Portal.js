@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-export const Portal = ({ children, el = 'div' }) => {
+const Portal = ({ children, el = 'div' }) => {
   const [container] = useState(document.createElement(el));
 
   useEffect(() => {

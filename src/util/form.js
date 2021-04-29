@@ -20,7 +20,7 @@ export const validateFields = (fields, data) => {
       formErrors.push({
         accessor: field.accessor,
         hasErrors: true,
-        errorMessage: `The ${field.label} is mandartory`,
+        errorMessage: field.requiredError || `The ${field.label} is mandartory`,
         value: data[field.accessor]
       });
     } else {
@@ -58,7 +58,8 @@ export const validateFieldTypes = (field, data) => {
       typeErrors.push({
         accessor: field.accessor,
         hasErrors: true,
-        errorMessage: `The email entered is not a valid one`,
+        errorMessage:
+          field.emailError || `The email entered is not a valid one`,
         value: fieldValue
       });
     }

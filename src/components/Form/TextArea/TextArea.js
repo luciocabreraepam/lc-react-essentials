@@ -6,7 +6,7 @@ const TextArea = props => (
   <TextAreaStyled
     id={props.accessor}
     name={props.accessor}
-    placeholder={`Please enter ${props.label}`}
+    placeholder={props.placeholder}
     value={props.value}
     backgroundColor={props.backgroundColor}
     border={props.border}
@@ -18,9 +18,8 @@ const TextArea = props => (
 TextArea.propTypes = {
   /** TextArea's accessor.*/
   accessor: PropTypes.string.isRequired,
-  /** Field's label which will be used as
-   * TextArea's placeholder. */
-  label: PropTypes.string,
+  /** TextArea's placeholder. */
+  placeholder: PropTypes.string,
   /** TextArea's value. */
   value: PropTypes.string,
   /** TextArea's font color.

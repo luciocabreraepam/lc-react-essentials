@@ -1,5 +1,5 @@
-import { Portal } from 'lc-react-essentials';
 import React from 'react';
+import { Portal } from '../Portal';
 import { Loader, ModalWrapper, Background } from './styles';
 
 const Spinner = () => (

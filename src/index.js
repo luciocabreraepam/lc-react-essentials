@@ -21,5 +21,3 @@ export * from './components/Link';
 export * from './components/Modal';
 export * from './components/ToggleButton';
 
-export * from './components/ReCaptcha';
-

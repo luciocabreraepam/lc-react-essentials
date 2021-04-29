@@ -21,7 +21,7 @@ Input.propTypes = {
   /** Input's accessor.*/
   accessor: PropTypes.string,
   /** Input's placeholder. */
-   placeholder: PropTypes.string,
+  placeholder: PropTypes.string,
   /** Input's value. */
   value: PropTypes.string,
   /** Input's type.

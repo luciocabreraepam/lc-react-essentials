@@ -21,7 +21,11 @@ const HeaderImpact = props => (
 
 HeaderImpact.propTypes = {
   /** Header's title */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+    PropTypes.element
+  ]),
   /** Header's subtitle */
   subtitle: PropTypes.string,
   /** Header's font color.
